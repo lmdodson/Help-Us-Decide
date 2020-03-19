@@ -1,5 +1,6 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+-- Creates the "movie" database --
+CREATE DATABASE whaddya;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+USE whaddya;
+
+SELECT * FROM movies_data_short

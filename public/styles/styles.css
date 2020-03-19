@@ -1,3 +1,8 @@
+body {
+  font-family: 'Baloo 2', cursive;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
+
