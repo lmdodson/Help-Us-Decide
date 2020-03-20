@@ -1,8 +1,13 @@
 body {
   font-family: 'Baloo 2', cursive;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .list-group-item {
   line-height: 2.5;
 }
 
+#logo {
+  height: 100px;
+}
