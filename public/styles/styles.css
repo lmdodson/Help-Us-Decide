@@ -11,7 +11,9 @@ body {
 }
 
 #logo {
+  position: fixed;
   height: 75px;
+  left: 0;
 }
 
 nav {
