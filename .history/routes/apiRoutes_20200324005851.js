@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
-  app.get("/api/movies", function (req, res) {
+  app.get("/api/test", function (req, res) {
     db.movies
       .findAll({
         // where: {
@@ -11,7 +11,7 @@ module.exports = function (app) {
       })
       .then(function (test) {
         res.json(test);
-        // console.log(test);
+        console.log(test);
       });
   });
 

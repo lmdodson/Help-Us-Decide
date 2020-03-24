@@ -2,16 +2,16 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
-  app.get("/api/movies", function (req, res) {
-    db.movies
+  app.get("/api/test", function (req, res) {
+    db.tables
       .findAll({
-        // where: {
-        //   body: "444"
-        // }
+        where: {
+          body: "444"
+        }
       })
       .then(function (test) {
         res.json(test);
-        // console.log(test);
+        console.log(test);
       });
   });
 

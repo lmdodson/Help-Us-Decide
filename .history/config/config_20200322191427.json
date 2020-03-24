@@ -2,20 +2,26 @@
   "development": {
     "username": "root",
     "password": "rootpassword",
-    "database": "whaddya",
+    "database": "programming_db",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "rootpassword",
-    "database": "whaddya",
+    "database": "programming_db",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql",
     "logging": false
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "username": "root",
+    "password": "password",
+    "database": "programming_db",
+    "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   }
 }

@@ -9,7 +9,7 @@
   "test": {
     "username": "root",
     "password": "rootpassword",
-    "database": "whaddya",
+    "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false

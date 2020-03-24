@@ -4,13 +4,15 @@
     "password": "rootpassword",
     "database": "whaddya",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "rootpassword",
-    "database": "whaddya",
+    "database": "testdb",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql",
     "logging": false
   },

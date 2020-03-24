@@ -4,6 +4,7 @@
     "password": "rootpassword",
     "database": "whaddya",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
@@ -11,11 +12,16 @@
     "password": "rootpassword",
     "database": "whaddya",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql",
     "logging": false
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "username": "root",
+    "password": "password",
+    "database": "whaddya",
+    "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   }
 }
