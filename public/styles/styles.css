@@ -138,8 +138,8 @@ body {
   width: 10rem;
   height: 10rem;
   margin: 0 auto 1.5rem;
-  border-radius: 50%;
-  border: 0.5rem solid #ffffff;
+  /* border-radius: 50%;
+  border: 0.5rem solid #ffffff; */
   /* background-image: url("//s3-us-west-2.amazonaws.com/s.cdpn.io/142996/profile/profile-512_5.jpg"); */
   background-size: cover;
 }
@@ -245,6 +245,18 @@ body {
 }
 
 @media screen and (max-width: 550px) {
+  .demo {
+    left: 20%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .demo {
+    left: 20%;
+    }
+}
+
+@media screen and (max-width: 460px) {
   .demo {
     left: 15%;
     }
