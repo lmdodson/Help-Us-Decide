@@ -2,17 +2,10 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
-  app.get("/api/movies", function (req, res) {
-    db.movies
-      .findAll({
-        // where: {
-        //   body: "444"
-        // }
-      })
-      .then(function (test) {
-        res.json(test);
-        // console.log(test);
-      });
+  app.get("/api/sample", function (req, res) {
+    db.Example.findAll({}).then(function (dbExamples) {
+      res.json(dbExamples);
+    });
   });
 
   // Create a new example
