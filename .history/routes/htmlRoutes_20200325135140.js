@@ -12,8 +12,8 @@ module.exports = function (app) {
   });
 
   // render genres selection page
-  app.get("/genres", function (req, res) {
-    res.render("genres");
+  app.get("/", function (req, res) {
+    res.render("index");
   });
   // render cards page
   app.get("/cards", function (req, res) {
