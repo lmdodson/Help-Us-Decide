@@ -7,8 +7,9 @@ module.exports = function (app) {
       .findAll({
         where: {
           category: "Adventure"
-        },
+        }
         limit: 10
+
       })
       .then(function (test) {
         res.json(test);
