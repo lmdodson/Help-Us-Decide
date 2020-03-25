@@ -2,7 +2,7 @@ body {
   font-family: 'Baloo 2', cursive;
   background-color: #000000;
   color: #ffffff;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* height: 100%; */
 }
 
@@ -10,9 +10,16 @@ body {
   line-height: 2.5;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
 #logo {
   position: fixed;
-  height: 75px;
+  height: 64px;
   left: 0;
   z-index: 1000;
 }
@@ -22,6 +29,48 @@ nav {
   width: 100%;
 }
 
+.genre-icon {
+  display: block;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: 10px auto;
+}
+
+.icon {
+  position: absolute;
+  align-content: center;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.icon.top:hover {
+  opacity: 0;
+}
+
+#genres {
+  margin-top: 75px;
+}
+
+.container {
+  margin-top: 75px;
+}
+
+.genre-name {
+  font-size: medium;
+  text-align: center;
+}
+
+footer {
+  height: 50px;
+  text-align: center;
+  display: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 /* from Tinder-like Card Swipe: https://codepen.io/suez/pen/MaeVBy.css */
 
 *, *:before, *:after {
@@ -32,11 +81,6 @@ nav {
 
 html, body {
   font-size: 62.5%;
-}
-
-body {
-  /* background: #63BDF7; */
-  overflow: hidden;
 }
 
 .demo {
