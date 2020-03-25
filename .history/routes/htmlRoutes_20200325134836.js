@@ -7,13 +7,13 @@ module.exports = function (app) {
   });
 
   // render platforms selection page
-  app.get("/platforms", function (req, res) {
+  app.get("/", function (req, res) {
     res.render("platforms");
   });
 
   // render genres selection page
-  app.get("/genres", function (req, res) {
-    res.render("genres");
+  app.get("/", function (req, res) {
+    res.render("index");
   });
   // render cards page
   app.get("/cards", function (req, res) {
