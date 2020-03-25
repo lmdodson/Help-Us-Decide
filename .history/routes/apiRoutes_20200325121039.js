@@ -8,7 +8,9 @@ module.exports = function (app) {
         where: {
           category: "Adventure"
         },
-        limit: 10
+        {
+          limit: 10
+        }
       })
       .then(function (test) {
         res.json(test);
