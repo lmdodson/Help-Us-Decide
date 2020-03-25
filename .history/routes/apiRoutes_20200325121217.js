@@ -6,9 +6,9 @@ module.exports = function (app) {
     db.movies
       .findAll({
         where: {
-          category: "Adventure"
-        },
-        limit: 10
+          category: "Adventure",
+          limit: 10
+        }
       })
       .then(function (test) {
         res.json(test);

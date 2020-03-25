@@ -17,16 +17,13 @@ module.exports = function (app) {
       where: {
         id: req.params.id
       }
-    }).then(function (dbExample) {
+    }).then(function (
+      dbExample
+    ) {
       res.render("example", {
         example: dbExample
       });
     });
-  });
-
-  // render cards page
-  app.get("/selection", function (req, res) {
-    res.render("cards");
   });
 
   // Render 404 page for any unmatched routes
@@ -34,3 +31,7 @@ module.exports = function (app) {
     res.render("404");
   });
 };
+
+app.get("/selection", function (req, res) {
+  res.render("cards");
+});
