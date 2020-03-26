@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "rootpassword",
+    "password": process.env.CONFIG,
     "database": "whaddya",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "password",
+    "password": "rootpassword",
     "database": "whaddya",
     "host": "localhost",
     "dialect": "mysql",

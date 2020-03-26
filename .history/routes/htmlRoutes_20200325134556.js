@@ -1,22 +1,13 @@
-// var db = require("../models");
+var db = require("../models");
 
 module.exports = function (app) {
-  // render index page
+  // Load index page
   app.get("/", function (req, res) {
     res.render("index");
   });
 
-  // render platforms selection page
-  app.get("/platforms", function (req, res) {
-    res.render("platforms");
-  });
-
-  // render genres selection page
-  app.get("/genres", function (req, res) {
-    res.render("genres");
-  });
   // render cards page
-  app.get("/cards", function (req, res) {
+  app.get("/selection", function (req, res) {
     res.render("cards");
   });
 
