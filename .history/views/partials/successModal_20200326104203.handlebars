@@ -1,0 +1,78 @@
+{{!-- <div id="successModal" class="modal" style="background-color:#2e2e2e;">
+    <div class="col m12 center-align" style="background-color:#2e2e2e;">
+        <a id="continueButton" href="" class="modal-close btn waves-effect grey darken-3 waves-light"
+            style="margin-bottom: 33px;">Continue</a>
+    </div>
+</div> --}}
+<style>
+    .modal {
+    display: none;
+    overflow: auto;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 7050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0
+}
+
+.modal.fade .modal-dialog {
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -moz-transition: -moz-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px
+}
+
+@media (min-width:768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 30px auto
+    }
+}
+.modal {
+    display: none;
+    overflow: auto;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* bottom: 0; */
+    left: 0;
+    z-index: 7050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0
+}
+</style>
+
+<div id="successModal" class="modal" style="background-color:#2e2e2e;">
+
+    <div id="modalPicture" class="col m8 offset-m2 center-align" style="margin-top: 20px;">
+        <img id="theModalPicture" class="responsive-img" src="">
+    </div>
+
+    <div class="modal-content center-align" style="background-color:#2e2e2e;">
+        <audio autoplay name="media" id="theSuperSecretAudio" style="margin-top:5%;">
+            <source id="audioSourceMp3" src="" type="audio/mpeg">
+            <source id="audioSourceOgg" src="" type="audio/ogg">
+            <source id="audioSourceWav" src="" type="audio/wav">
+            Your browser does not support the HTML5 Audio element.
+        </audio>
+    </div>
+    {{!-- <div class="modal-footer" style="background-color:#2e2e2e;"> --}}
+    <div class="col m12 center-align" style="background-color:#2e2e2e;">
+        <a id="continueButton" href="" class="modal-close btn waves-effect grey darken-3 waves-light"
+            style="margin-bottom: 33px;">Continue</a>
+    </div>
+</div>
