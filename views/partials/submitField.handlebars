@@ -1,19 +1,26 @@
-<div class="row" style="width:100%;">
+<div class="row div-login" style="width:100%;">
     <form class="col s12 m12">
+        <h3 style="color:#ffffff; text-align: center;">Login</h1>
         <div class="row">
+            
             <div class="input-field col s12 m6 offset-m3">
+                <label for="user" style="color:#ffffff; margin-left: 5px;">Email address</label>
                 <input id="user" type="text"
-                    style="color:white;">
+                    style="color:#ffffff; border: solid #ffffff 1px">
             </div>
+            <br>
             <div class="input-field col s12 m6 offset-m3">
+                  <label for="password" style="color:#ffffff; margin-left: 5px;">password</label>
                 <input id="password" type="password"
-                    style="color:white;">
+                    style="color:#ffffff; border: solid #ffffff 1px">
                 <p style="color:white;" id="responseText"> </p>
             </div>
+            <br>
             <div class="input-field col s3">
                 <a onclick="submitStep();" class="waves-effect waves-light btn grey lighten-5"
                     style="color:black;">Submit</a>
             </div>
     </form>
     <input type="hidden" id="login" name="login" value="{{login}}">
+    <br>
 </div>
