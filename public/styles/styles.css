@@ -30,9 +30,26 @@ nav {
 }
 
 .genre-icon {
-  display: inline-block;
-  margin: 10px;
+  display: block;
+  position: relative;
+  height: 15em;
+  width: 15em;
+  margin: 10px auto;
 }
+
+.icon {
+  position: absolute;
+  align-content: center;
+  height: 16em;
+  width: 16em;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.icon.top:hover {
+  opacity: 0;
 
 #genres {
   margin-top: 75px;
