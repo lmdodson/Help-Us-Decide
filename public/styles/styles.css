@@ -32,14 +32,16 @@ nav {
 .genre-icon {
   display: block;
   position: relative;
-  height: 100px;
-  width: 100px;
+  height: 15em;
+  width: 15em;
   margin: 10px auto;
 }
 
 .icon {
   position: absolute;
   align-content: center;
+  height: 16em;
+  width: 16em;
   -webkit-transition: opacity 0.25s ease-in-out;
   -moz-transition: opacity 0.25s ease-in-out;
   -o-transition: opacity 0.25s ease-in-out;
