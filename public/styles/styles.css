@@ -39,6 +39,7 @@ nav {
 }
 
 .container {
+  margin: auto;
   margin-top: 75px;
 }
 
@@ -54,6 +55,12 @@ nav {
 .platform-icon {
   display: inline-block;
   margin: 10px;
+  width: 14%;
+  padding: 2%;
+}
+
+.platform-icon:first-of-type {
+  margin-left: 2%;
 }
 
 .platform-name {
