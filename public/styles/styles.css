@@ -50,6 +50,10 @@ nav {
 
 .icon.top:hover {
   opacity: 0;
+}
+.selected {
+  opacity: 0;
+}
 
 #genres {
   margin-top: 75px;
