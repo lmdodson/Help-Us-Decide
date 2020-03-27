@@ -98,20 +98,6 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-$(document).on("click", ".icon top", function toggleState() {
-  var state = $(this).attr("data-state");
-
-  if (state === "selected") {
-    var defaultVal = $(this).attr("data-default");
-    $(this).attr("src", defaultVal);
-    $(this).attr("data-state", "default");
-  } else if (state === "default") {
-    var selectedVal = $(this).attr("data-selected");
-    $(this).attr("src", selectedVal);
-    $(this).attr("data-state", "selected");
-  }
-}); //toggleState closing tag
-
 //from tinder-like card swipe
 var animating = false;
 var cardsCounter = 0;
