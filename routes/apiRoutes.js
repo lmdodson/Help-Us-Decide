@@ -1,8 +1,8 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Get all examples
-  app.get("/api/movies", function (req, res) {
+  app.get("/api/movies", function(req, res) {
     db.movies
       .findAll({
         where: {
@@ -10,22 +10,23 @@ module.exports = function (app) {
         },
         limit: 10
       })
-      .then(function (test) {
+      .then(function(test) {
         res.json(test);
         // console.log(test);
       });
   });
 
-  app.get("/api/users", function (req, res) {
-    db.users.findAll({
-      // where: {
-      //   user: req.params.user,
-
-      // }
-    }). then(function (test) {
-      res.json(test);
-    })
-  })
+  app.get("/api/users", function(req, res) {
+    db.users
+      .findAll({
+        // where: {
+        //   user: req.params.user,
+        // }
+      })
+      .then(function(test) {
+        res.json(test);
+      });
+  });
 
   // Create a new example
   // app.post("/api/examples", function(req, res) {
