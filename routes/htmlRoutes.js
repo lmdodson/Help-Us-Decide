@@ -3,27 +3,28 @@ var constants = require('../config/constants');
 var controller = require('../config/controller');
 var express = require("express");
 
-module.exports = function(app) {
-  // render index page
-  app.get("/", function(req, res) {
-    res.render("index", {
-      title: "Welcome to Whaddya"
+module.exports = function (app) {
+  // render index page 
+  app.get("/", function (req, res) {
+    res.render('login', {
+      title: "Welcome to Whaddya",
+      login: "LOGIN"
     });
   });
 
   // render login page
-  app.get('/login', function(req, res) {
+  app.get('/login', function (req, res) {
     res.render('login', {
       title: "Whaddya Login",
       login: "LOGIN"
     });
   });
 
-  app.get('/platforms', function(req, res, next) {
+  app.get('/platforms', function (req, res, next) {
     // if (req.session.theSecret == constants.sessionSecret(theUser)) {
-      res.render("platforms", {
-        title: "Platforms !!"
-      });
+    res.render('platforms', {
+      title: "Platforms !!"
+    });
     // } else {
     //   console.log("no can do...");
     // }
@@ -37,16 +38,16 @@ module.exports = function(app) {
   // });
 
   // render genres selection page
-  app.get("/genres", function(req, res) {
+  app.get("/genres", function (req, res) {
     res.render("genres");
   });
   // render cards page
-  app.get("/cards", function(req, res) {
+  app.get("/cards", function (req, res) {
     res.render("cards");
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 
