@@ -19,25 +19,29 @@ function submitStep() {
   };
 
   console.log(userData);
+
    function userCheck(userData){
 $.get("api/users", function (data) {
   // check the user data against what is in the database
   for (var i =0; i < data.length; i++) {
     // console.log (data[i])
     if (data[i].user == userData.user && data[i].password == userData.password) {
+
       // confirm the user is in the database
+
       console.log ("user exists");
       userData.isUser = true;
       console.log (userData.isUser);
       return (userData);
     } 
+
     else {
       console.log ("user doesn't exist")
     }
   }
 })
 // if the user is in the database
-if (userData.isUser == true) {
+if (userData.isUser = true) {
   console.log("next step!")
           $('#successModal').modal();
           $('#successModal').modal('open');
@@ -47,6 +51,7 @@ if (userData.isUser == true) {
   console.log("sorry")
     }
   }
+
   userCheck(userData);
 }
 //   $.ajax({
