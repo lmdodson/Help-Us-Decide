@@ -41,7 +41,7 @@ $.get("api/users", function (data) {
   }
 })
 // if the user is in the database
-if (userData.isUser = true) {
+if (userData.isUser == true) {
   console.log("next step!")
           $('#successModal').modal();
           $('#successModal').modal('open');
