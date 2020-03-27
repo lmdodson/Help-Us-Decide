@@ -1,7 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "passw0rd",
+
+    "password": "rootpassword",
     "database": "whaddya",
     "host": "localhost",
     "dialect": "mysql"
