@@ -16,7 +16,8 @@
   <title>{{{title}}}</title>
 </head>
 
-<body>
+
+<body id={{{nextPage}}}>
   <header>
 
     <nav>
@@ -46,6 +47,22 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/javascript.js"></script>
   <script src="/js/index.js"></script>
+
+  <script>
+    $(document).on("click", ".icon.top", function toggleState() {
+      var state = $(this).attr("data-state");
+
+      if (state === "default") {
+        var defaultVal = $(this).attr("data-default");
+        $(this).addClass("selected");
+        $(this).attr("data-state", "selected");
+      } else if (state === "selected") {
+        var selectedVal = $(this).attr("data-selected");
+        $(this).addClass("selected");
+        $(this).attr("data-state", "default");
+      }
+    }); //toggleState closing tag
+  </script>
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

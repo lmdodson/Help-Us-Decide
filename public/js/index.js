@@ -1,10 +1,12 @@
-// require('dotenv').config()
+// var dotenv = require('dotenv').config()
 // !platform selection
+// store the platform choice to pass use later
 let platformChoice = "";
 
 // !user genre selection
 // the array in which to push user genre selections
 let genreChoice = [];
+
 
 // pass genre choices to backend
 // for(i=0; i<genreChoice.length; i++) {
@@ -67,7 +69,7 @@ function release() {
   if (Math.abs(pullDeltaX) >= decisionVal) {
     $card.addClass("inactive");
 
-    setTimeout(function() {
+    setTimeout(function () {
       $card.addClass("below").removeClass("inactive to-left to-right");
       cardsCounter++;
       if (cardsCounter === numOfCards) {
@@ -81,7 +83,7 @@ function release() {
     $card.addClass("reset");
   }
 
-  setTimeout(function() {
+  setTimeout(function () {
     $card
       .attr("style", "")
       .removeClass("reset")
@@ -93,7 +95,7 @@ function release() {
   }, 300);
 }
 
-$(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(
+$(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function (
   e
 ) {
   if (animating) return;
@@ -103,14 +105,14 @@ $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(
   $cardLike = $(".demo__card__choice.m--like", $card);
   var startX = e.pageX || e.originalEvent.touches[0].pageX;
 
-  $(document).on("mousemove touchmove", function(e) {
+  $(document).on("mousemove touchmove", function (e) {
     var x = e.pageX || e.originalEvent.touches[0].pageX;
     pullDeltaX = x - startX;
     if (!pullDeltaX) return;
     pullChange();
   });
 
-  $(document).on("mouseup touchend", function() {
+  $(document).on("mouseup touchend", function () {
     $(document).off("mousemove touchmove mouseup touchend");
     if (!pullDeltaX) return; // prevents from rapid click events
     release();
@@ -217,4 +219,3 @@ $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(
 // // Add event listeners to the submit and delete buttons
 // $submitBtn.on("click", handleFormSubmit);
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
-
