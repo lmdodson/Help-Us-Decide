@@ -1,33 +1,238 @@
-<div id="home">
+<header>
+
+  <nav>
+    <div class="nav-wrapper">
+      <img id="logo" src="img/whaddyalogo.jpg" alt="logo">
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
+</header>
+
+<div id="genres">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-action-100-blue.png">
+          <img class="icon top" src="img/icons8-action-100.png" alt="fist">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-trekking-100-blue.png">
+          <img class="icon top" src="img/icons8-trekking-100.png" alt="person trekking">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-animation-100-blue.png">
+          <img class="icon top" src="img/icons8-animation-100.png" alt="animation icon">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-lol-100-blue.png">
+          <img class="icon top" src="img/icons8-lol-100.png" alt="laughing emoji">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-handcuffs-100-blue.png">
+          <img class="icon top" src="img/icons8-handcuffs-100.png" alt="Handcuffs">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-documentary-100-blue.png">
+          <img class="icon top" src="img/icons8-documentary-100.png" alt="video camera">
+        </div>
       </div>
     </div>
+    <!--End row-->
+
+    <div class="row">
+      <div class="col s2">
+        <p class="genre-name">Action</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Adventure</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Animation</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Comedy</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Crime</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Documentary</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-theatre-mask-100-blue.png">
+          <img class="icon top" src="img/icons8-theatre-mask-100.png" alt="drama masks happy sad">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-family-100-blue.png">
+          <img class="icon top" src="img/icons8-family-100.png" alt="icon of family">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-dragon-100-blue.png">
+          <img class="icon top" src="img/icons8-dragon-100.png" alt="dragon">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-historical-96-blue.png">
+          <img class="icon top" src="img/icons8-historical-96.png" alt="hourglass">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-horror-100-blue.png">
+          <img class="icon top" src="img/icons8-horror-100.png" alt="bloody knife">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-musical-notes-100-blue.png">
+          <img class="icon top" src="img/icons8-musical-notes-100.png" alt="musical notes">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s2">
+        <p class="genre-name">Drama</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Family</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Fantasy</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">History</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Horror</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Musical</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-detective-100-blue.png">
+          <img class="icon top" src="img/icons8-detective-100.png" alt="detective">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-romance-100-blue.png">
+          <img class="icon top" src="img/icons8-romance-100.png" alt="two hearts">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-sci-fi-100-blue.png">
+          <img class="icon top" src="img/icons8-sci-fi-100.png" alt="U.F.O.">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-running-100-blue.png">
+          <img class="icon top" src="img/icons8-running-100.png" alt="icon of person running">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-army-tank-80-blue.png">
+          <img class="icon top" src="img/icons8-army-tank-80.png" alt="army tank">
+        </div>
+      </div>
+
+      <div class="col s2">
+        <div class="genre-icon">
+          <img class="icon bottom" src="img/icons8-western-100-blue.png">
+          <img class="icon top" src="img/icons8-western-100.png" alt="Cactus">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s2">
+        <p class="genre-name">Mystery</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Romance</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Sci-fi</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Thriller</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">War</p>
+      </div>
+      <div class="col s2">
+        <p class="genre-name">Western</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3"></div>
+      <div class="col s6"><a class="waves-effect waves-light btn-large" id="submit" style="background-color: #3367cc; display: block; margin-left: auto; margin-right: auto;"><i class="material-icons right">send</i>submit</a></div>
+      <div class="col s3"></div>
+    </div>
+
   </div>
 </div>
 
+
+{{!-- LANDING PAGE MESSAGE/IMAGE --}}
+
+<footer>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></footer>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
