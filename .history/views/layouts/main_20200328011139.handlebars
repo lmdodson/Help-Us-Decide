@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/materialize-style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>{{{title}}}</title>
+</head>
+
+
+<body id={{{nextPage}}}>
+  <header>
+
+    <nav>
+      <div class="nav-wrapper">
+        <img id="logo" src="img/whaddyalogo.jpg" alt="logo">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">Javascript</a></li>
+          <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">Javascript</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+    </ul>
+  </header>
+
+  {{{body}}}
+
+  <footer>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></footer>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/javascript.js"></script>
+  <script src="/js/index.js"></script>
+
+  {{!-- <script>
+    $(document).on("click", ".icon.top", function toggleState() {
+      var state = $(this).attr("data-state");
+
+      if (state === "default") {
+        var defaultVal = $(this).attr("data-default");
+        $(this).addClass("selected");
+        $(this).attr("data-state", "selected");
+      } else if (state === "selected") {
+        var selectedVal = $(this).attr("data-selected");
+        $(this).addClass("selected");
+        $(this).attr("data-state", "default");
+      }
+    }); //toggleState closing tag
+  </script> --}}
+
+  <script>
+    $(".icon").click(function () {
+      alert("this was clicked")
+    })
+  </script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
