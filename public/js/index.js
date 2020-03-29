@@ -5,7 +5,6 @@ $(window).on('load', function () {
   // store the platform choice to pass use later
   let platformChoice = "";
 
-
   // !user genre selection
   // the array in which to push user genre selections
   let genreChoice = [];
@@ -38,6 +37,7 @@ $(window).on('load', function () {
       // loops through the titles in movieOptions
       for (i = 0; i < movieOptions.length; i++) {
         //! utelly call
+        // api config
         var utellyConfig = {
           "async": true,
           "crossDomain": true,
@@ -45,16 +45,33 @@ $(window).on('load', function () {
           "method": "GET",
           "headers": {
             "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-            "x-rapidapi-key": "8c82e4dd37msh31e61bbc05c60afp12c20fjsn273f40e54380"
+            // cleared until dotenv is configured
+            "x-rapidapi-key": ""
           }
         }
 
         // ajax call to utelly
-        $.ajax(utellyConfig).done(function (response) {
-          console.log(response);
+        $.ajax(utellyConfig).done(function (res) {
+          console.log(res)
+          // define the values for the db
+          var Options = {
+            title: res.results[0].name,
+            img: res.results[0].locations[0].url,
+            platform: res.results[0].locations[0].display_name,
+          };
+          // push the values to the db
+          $.post("/api/options/", Options, function () {
+            console.log("done")
+          });
+
+
+          // }
+
+          // console.log(res);
         });
       };
     })
+
     // movieInfo(movieOptions);
   }
 
@@ -75,6 +92,7 @@ $(window).on('load', function () {
       $(this).removeClass("default");
 
       // logic tied to the user's current location
+      // if the user is at genres
       if (window.location.href.includes("genres")) {
         // save the users genre selection to a variable
         genre = $(this).attr("name");
@@ -83,6 +101,10 @@ $(window).on('load', function () {
 
         // pass the user's choice to the getMovies function
         getMovies(genre);
+        // if the user is at platforms
+      } else if (window.location.href.includes("platforms")) {
+        platformChoice = $(this).attr("name");
+        console.log(platformChoice);
       }
       // deselect a selected icon
     } else if (state === "selected") {
