@@ -14,16 +14,20 @@ $(window).on('load', function () {
 
   // passes the user's genre selection to the db call
   function getMovies(genre) {
+    console.log("in getMovies")
     // identifies the genre variable
     var genreString = genre || "";
     // passes genre to the api
     if (genreString) {
       // add the genre to the api
       genreString = "/category/" + genreString;
+      console.log('genreString: ', genreString);
+
     };
     // db call using the genre
     $.get("/api/movies" + genreString, function (data) {
       movies = data;
+      console.log(movies)
 
       // grabs only the movie title for th
       for (i = 0; i < movies.length; i++) {
@@ -46,7 +50,7 @@ $(window).on('load', function () {
           "headers": {
             "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
             // cleared until dotenv is configured
-            "x-rapidapi-key": ""
+            "x-rapidapi-key": "8c82e4dd37msh31e61bbc05c60afp12c20fjsn273f40e54380"
           }
         }
 
@@ -67,7 +71,6 @@ $(window).on('load', function () {
 
           // }
 
-          // console.log(res);
         });
       };
     })
@@ -87,17 +90,24 @@ $(window).on('load', function () {
       var selectedVal = $(this).attr("data-selected");
       $(this).attr("src", selectedVal);
       console.log(selectedVal);
+
       $(this).addClass("selected");
       $(this).attr("data-state", "selected");
       $(this).removeClass("default");
+
+      // ! verifying
+      var state = $(this).attr("data-state");
+      console.log(state);
 
       // logic tied to the user's current location
       // if the user is at genres
       if (window.location.href.includes("genres")) {
         // save the users genre selection to a variable
+        console.log("done")
+
         genre = $(this).attr("name");
         // genreChoice.push(choice)
-        // console.log(genreChoice)
+        console.log(genreChoice)
 
         // pass the user's choice to the getMovies function
         getMovies(genre);
