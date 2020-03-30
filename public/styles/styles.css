@@ -54,6 +54,17 @@ nav {
   margin: 10px auto;
 }
 
+.card-icon {
+  display: block;
+  position: inherit;
+  width: 75px;
+  margin: auto 70px;
+}
+
+img.card {
+  width: 100px;
+}
+
 .icon {
   position: absolute;
   align-content: center;
@@ -226,7 +237,8 @@ body {
 
 .demo__card__top {
   height: 20.5rem;
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
+  padding-top: 15px;
 }
 
 .demo__card__top.purple {

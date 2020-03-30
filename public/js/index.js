@@ -1,6 +1,4 @@
 $(window).on('load', function () {
-
-  // var dotenv = require('dotenv').config()
   // !platform selection
   // store the platform choice to pass use later
   let platformChoice = "";
@@ -61,13 +59,12 @@ $(window).on('load', function () {
           var Options = {
             title: res.results[0].name,
             img: res.results[0].locations[0].url,
-            platform: res.results[0].locations[0].display_name,
+            platform: res.results[0].locations[0].display_name
           };
           // push the values to the db
           $.post("/api/options/", Options, function () {
             console.log("done")
           });
-
 
           // }
 
@@ -78,8 +75,7 @@ $(window).on('load', function () {
     // movieInfo(movieOptions);
   }
 
-
-  // filter 
+  // filter
 
   // !icon selection logic
 
@@ -130,7 +126,8 @@ $(window).on('load', function () {
   // !from tinder-like card swipe
   var animating = false;
   var cardsCounter = 0;
-  var numOfCards = 6;
+  // var numOfCards = 6;
+  var numOfCards = 18;
   var decisionVal = 80;
   var pullDeltaX = 0;
   var deg = 0;
@@ -211,9 +208,9 @@ $(window).on('load', function () {
     });
   });
 
-  console.log('All assets are loaded')
-
 })
+
+
 // !example js
 // Get references to page elements
 // var $exampleText = $("#example-text");
