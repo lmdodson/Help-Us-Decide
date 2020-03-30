@@ -1,6 +1,6 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Get all examples
   // app.get("/api/movies", function (req, res) {
   //   db.movies
@@ -18,7 +18,7 @@ module.exports = function (app) {
 
   // get all movies of a specific genre
   // Get route for returning posts of a specific category
-  app.get("/api/movies/category/:genre", function (req, res) {
+  app.get("/api/movies/category/:genre", function(req, res) {
     db.movies
       .findAll({
         where: {
@@ -26,29 +26,30 @@ module.exports = function (app) {
         },
         limit: 5
       })
-      .then(function (dbMovies) {
+      .then(function(dbMovies) {
         res.json(dbMovies);
       });
   });
 
-  app.get("/api/users", function (req, res) {
+  app.get("/api/users", function(req, res) {
     db.users
       .findAll({
         // where: {
         //   user: req.params.user,
         // }
       })
-      .then(function (users) {
+      .then(function(users) {
         res.json(users);
       });
   });
 
   // Create a new example
-  app.post("/api/options", function (req, res) {
-    db.Options.create(req.body).then(function (options) {
+  app.post("/api/options", function(req, res) {
+    db.Options.create(req.body).then(function(options) {
       res.json(options);
     });
   });
+
 
   // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
