@@ -1,6 +1,7 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   var moviesdb = sequelize.define(
-    "movies", {
+    "movies",
+    {
       movieID: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -12,7 +13,8 @@ module.exports = function (sequelize, DataTypes) {
       category: {
         type: DataTypes.STRING
       }
-    }, {
+    },
+    {
       freezeTableName: true,
       timestamps: false
     }
