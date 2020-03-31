@@ -1,5 +1,5 @@
 # Whaddya
-[Whaddya](https://whaddya.herokuapp.com/#)
+Check out the deployed app! [Whaddya](https://whaddya.herokuapp.com/#)
 
 This project is a full stack web app designed to address the common question presented when people hang out: "What do you want to do?". 
 It is currently designed to assist with movie selection. The user can sign in, select a preferred platform and select a preferred genre.
