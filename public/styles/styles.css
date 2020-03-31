@@ -132,6 +132,11 @@ footer {
   margin-top: 100px;
 }
 
+.movie-name {
+  color: #000000;
+  font-size: medium;
+  text-align: center;
+}
 /* input {
   background-color: #ffffff;
 } */

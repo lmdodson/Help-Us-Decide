@@ -1,4 +1,4 @@
-$(window).on('load', function () {
+$(window).on("load", function() {
   // !platform selection
   // store the platform choice to pass use later
   let platformChoice = "";
@@ -12,65 +12,92 @@ $(window).on('load', function () {
 
   // passes the user's genre selection to the db call
   function getMovies(genre) {
-    console.log("in getMovies")
+    console.log("in getMovies");
     // identifies the genre variable
     var genreString = genre || "";
     // passes genre to the api
     if (genreString) {
       // add the genre to the api
       genreString = "/category/" + genreString;
-      console.log('genreString: ', genreString);
-
-    };
+      console.log("genreString: ", genreString);
+    }
     // db call using the genre
-    $.get("/api/movies" + genreString, function (data) {
+    $.get("/api/movies" + genreString, function(data) {
       movies = data;
-      console.log(movies)
+      console.log(movies);
 
       // grabs only the movie title for th
       for (i = 0; i < movies.length; i++) {
         var x = movies[i].title;
         // adds the movie title to the array
         movieOptions.push(x);
-      };
+      }
       // function once the data is returned
-    }).then(function () {
-
+    }).then(function() {
       // loops through the titles in movieOptions
       for (i = 0; i < movieOptions.length; i++) {
         //! utelly call
         // api config
         var utellyConfig = {
-          "async": true,
-          "crossDomain": true,
-          "url": "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=" + movieOptions[i] + "&country=us",
-          "method": "GET",
-          "headers": {
-            "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
+          async: true,
+          crossDomain: true,
+          url:
+            "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=" +
+            movieOptions[i] +
+            "&country=us",
+          method: "GET",
+          headers: {
+            "x-rapidapi-host":
+              "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
             // cleared until dotenv is configured
-            "x-rapidapi-key": "8c82e4dd37msh31e61bbc05c60afp12c20fjsn273f40e54380"
+            "x-rapidapi-key":
+              "8c82e4dd37msh31e61bbc05c60afp12c20fjsn273f40e54380"
           }
-        }
+        };
 
+        var Options = {};
         // ajax call to utelly
-        $.ajax(utellyConfig).done(function (res) {
-          console.log(res)
+        $.ajax(utellyConfig).done(function(res) {
+          console.log(res);
           // define the values for the db
-          var Options = {
+          Options = {
             title: res.results[0].name,
-            img: res.results[0].locations[0].url,
-            platform: res.results[0].locations[0].display_name
+            imdb: res.results[0].external_ids.imdb.id,
+            platform: res.results[0].locations[0].display_name,
           };
-          // push the values to the db
-          $.post("/api/options/", Options, function () {
-            console.log("done")
+          console.log(Options);
+          $.post("/api/options/", Options, function() {
+            console.log("done");
           });
 
-          // }
+          var apiKey = "04a53e64029155a93b244799fbc01994";
+          var queryUrl =
+            "https://api.themoviedb.org/3/find/" +
+            Options.imdb +
+            "?api_key=" +
+            apiKey +
+            "&language=en-US&external_source=imdb_id";
+          var base_url = "https://image.tmdb.org/t/p/w185";
+          $.ajax(queryUrl).done(function(response) {
+            // console.log("Response: " + response);
 
+            if (!response.movie_results[0]) {
+              var poster = response.tv_results[0].poster_path;
+            } else {
+              var poster = response.movie_results[0].poster_path;
+            }
+            console.log(poster);
+            var poster_url = base_url + poster;
+          });
+
+          // push the values to the db
+          $.post("/api/options/", Options, function() {
+            console.log("done");
+          });
+          // }
         });
-      };
-    })
+      }
+    }); //close for loop
 
     // movieInfo(movieOptions);
   }
@@ -79,7 +106,7 @@ $(window).on('load', function () {
 
   // !icon selection logic
 
-  $(".icon").click(function () {
+  $(".icon").click(function() {
     var state = $(this).attr("data-state");
     // select an unselected icon
     if (state === "default") {
@@ -99,11 +126,11 @@ $(window).on('load', function () {
       // if the user is at genres
       if (window.location.href.includes("genres")) {
         // save the users genre selection to a variable
-        console.log("done")
+        console.log("done");
 
         genre = $(this).attr("name");
         // genreChoice.push(choice)
-        console.log(genreChoice)
+        console.log(genreChoice);
 
         // pass the user's choice to the getMovies function
         getMovies(genre);
@@ -158,7 +185,7 @@ $(window).on('load', function () {
     if (Math.abs(pullDeltaX) >= decisionVal) {
       $card.addClass("inactive");
 
-      setTimeout(function () {
+      setTimeout(function() {
         $card.addClass("below").removeClass("inactive to-left to-right");
         cardsCounter++;
         if (cardsCounter === numOfCards) {
@@ -172,7 +199,7 @@ $(window).on('load', function () {
       $card.addClass("reset");
     }
 
-    setTimeout(function () {
+    setTimeout(function() {
       $card
         .attr("style", "")
         .removeClass("reset")
@@ -184,7 +211,7 @@ $(window).on('load', function () {
     }, 300);
   }
 
-  $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function (
+  $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(
     e
   ) {
     if (animating) return;
@@ -194,22 +221,20 @@ $(window).on('load', function () {
     $cardLike = $(".demo__card__choice.m--like", $card);
     var startX = e.pageX || e.originalEvent.touches[0].pageX;
 
-    $(document).on("mousemove touchmove", function (e) {
+    $(document).on("mousemove touchmove", function(e) {
       var x = e.pageX || e.originalEvent.touches[0].pageX;
       pullDeltaX = x - startX;
       if (!pullDeltaX) return;
       pullChange();
     });
 
-    $(document).on("mouseup touchend", function () {
+    $(document).on("mouseup touchend", function() {
       $(document).off("mousemove touchmove mouseup touchend");
       if (!pullDeltaX) return; // prevents from rapid click events
       release();
     });
   });
-
-})
-
+});
 
 // !example js
 // Get references to page elements

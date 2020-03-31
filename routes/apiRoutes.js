@@ -50,7 +50,6 @@ module.exports = function(app) {
     });
   });
 
-
   app.get("/cards", function(req, res) {
     // greab the users movie options
     db.Options.findAll({
@@ -101,7 +100,6 @@ module.exports = function(app) {
       });
     });
   });
-
 
   // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
