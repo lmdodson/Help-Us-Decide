@@ -1,7 +1,6 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var optionsdb = sequelize.define(
-    "Options",
-    {
+    "Options", {
       title: {
         type: DataTypes.STRING,
         allowNull: false
@@ -14,12 +13,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       }
-      // platformChoice: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false
-      // }
-    },
-    {
+    }, {
       freezeTableName: true,
       timestamps: false,
       force: true

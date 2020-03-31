@@ -22,7 +22,11 @@
                 </div>
     </form>
     <input type="hidden" id="login" name="login" value="{{login}}">
-    <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
 
+    {{!-- <button onclick="TogetherJS(this); return false;">Start TogetherJS</button> --}}
+    <button id="start-togetherjs" type="button" onclick="TogetherJS(this); return false"
+        data-end-togetherjs-html="End TogetherJS">
+        Start TogetherJS
+    </button>
     <br>
 </div>
