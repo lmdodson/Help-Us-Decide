@@ -58,9 +58,9 @@ $(window).on("load", function() {
         var Options = {};
         // ajax call to utelly
 
-        $.ajax(utellyConfig).done(function (res) {
-          console.log(res)
-          var imdb = res.results[0].external_ids.imdb.id
+        $.ajax(utellyConfig).done(function(res) {
+          console.log(res);
+          var imdb = res.results[0].external_ids.imdb.id;
 
           // define the values for the db
           var apiKey = "04a53e64029155a93b244799fbc01994";
@@ -89,14 +89,15 @@ $(window).on("load", function() {
               platform: res.results[0].locations[0].display_name,
               platformChoice: platformChoice
             };
-  
-            $.post("/api/options/", Options, function () {
-              console.log("done")
+
+            $.post("/api/options/", Options, function() {
+              console.log("done");
+            });
           });
 
-          });
 
           // }
+
         });
       }
     }); //close for loop
