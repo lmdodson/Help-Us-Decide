@@ -181,11 +181,18 @@ $(window).on("load", function() {
     $cardLike.css("opacity", likeOpacity);
   }
 
+    var idCounter = 1;
   function release() {
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
+      liked.push(idCounter);
+      console.log("Liked: " + liked);
+      idCounter++;
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
+      rejected.push(idCounter);
+      console.log("Rejected: " + rejected);
+      idCounter++;
     }
 
     if (Math.abs(pullDeltaX) >= decisionVal) {
