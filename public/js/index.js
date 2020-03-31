@@ -95,32 +95,9 @@ $(window).on("load", function() {
             });
           });
 
-          var apiKey = "04a53e64029155a93b244799fbc01994";
-          var queryUrl =
-            "https://api.themoviedb.org/3/find/" +
-            Options.imdb +
-            "?api_key=" +
-            apiKey +
-            "&language=en-US&external_source=imdb_id";
-          var base_url = "https://image.tmdb.org/t/p/w185";
 
-          // console.log("Response: " + response);
-          if (platformChoice === Options.platformChoice) {
-            $.ajax(queryUrl).done(function(response) {
-              if (!response.movie_results[0]) {
-                var poster = response.tv_results[0].poster_path;
-              } else {
-                var poster = response.movie_results[0].poster_path;
-              }
-              console.log(poster);
-              var poster_url = base_url + poster;
-            });
+          // }
 
-            // push the values to the db
-            $.post("/api/options/", Options, function() {
-              console.log("done");
-            });
-          }
         });
       }
     }); //close for loop
@@ -185,6 +162,9 @@ $(window).on("load", function() {
   var pullDeltaX = 0;
   var deg = 0;
   var $card, $cardReject, $cardLike;
+
+  var rejected = [];
+  var liked = [];
 
   function pullChange() {
     animating = true;
