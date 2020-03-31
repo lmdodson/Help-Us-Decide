@@ -24,7 +24,7 @@ module.exports = function(app) {
         where: {
           category: req.params.genre
         },
-        limit: 5
+        limit: 10
       })
       .then(function(dbMovies) {
         res.json(dbMovies);
@@ -49,7 +49,6 @@ module.exports = function(app) {
       res.json(options);
     });
   });
-
 
   app.get("/cards", function(req, res) {
     // greab the users movie options
@@ -101,7 +100,6 @@ module.exports = function(app) {
       });
     });
   });
-
 
   // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {

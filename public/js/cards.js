@@ -33,7 +33,7 @@ function card() {
 
   //!
 
-  var source = '<p class="genre-name">{{movie}}</p>';
+  var source = '<p class="movie-name">{{movie}}</p>';
   console.log("sourceName: ", source);
 
   var template = Handlebars.compile(source);

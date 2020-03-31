@@ -13,11 +13,17 @@ module.exports = function(sequelize, DataTypes) {
       platform: {
         type: DataTypes.STRING,
         allowNull: false
+
+      },
+      platformChoice: {
+        type: DataTypes.STRING,
+        allowNull: false
       }
     },
     {
       freezeTableName: true,
-      timestamps: false
+      timestamps: false,
+      force: true
     }
   );
   optionsdb.sync();
