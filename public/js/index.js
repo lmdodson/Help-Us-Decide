@@ -57,17 +57,43 @@ $(window).on("load", function() {
 
         var Options = {};
         // ajax call to utelly
-        $.ajax(utellyConfig).done(function(res) {
-          console.log(res);
+
+        $.ajax(utellyConfig).done(function (res) {
+          console.log(res)
+          var imdb = res.results[0].external_ids.imdb.id
+
           // define the values for the db
-          Options = {
-            title: res.results[0].name,
-            imdb: res.results[0].external_ids.imdb.id,
-            platform: res.results[0].locations[0].display_name,
-          };
-          console.log(Options);
-          $.post("/api/options/", Options, function() {
-            console.log("done");
+          var apiKey = "04a53e64029155a93b244799fbc01994";
+          var queryUrl =
+            "https://api.themoviedb.org/3/find/" +
+            imdb +
+            "?api_key=" +
+            apiKey +
+            "&language=en-US&external_source=imdb_id";
+          var base_url = "https://image.tmdb.org/t/p/w185";
+          $.ajax(queryUrl).done(function(response) {
+            // console.log("Response: " + response);
+
+            if (!response.movie_results[0]) {
+              var poster = response.tv_results[0].poster_path;
+            } else {
+              var poster = response.movie_results[0].poster_path;
+            }
+            console.log(poster);
+            var poster_url = base_url + poster;
+            // push the values to the db
+            var Options = {
+              title: res.results[0].name,
+              img: poster_url,
+              imdb: res.results[0].external_ids.imdb.id,
+              platform: res.results[0].locations[0].display_name,
+              platformChoice: platformChoice
+            };
+  
+            $.post("/api/options/", Options, function () {
+              console.log("done")
+          });
+
           });
 
           var apiKey = "04a53e64029155a93b244799fbc01994";
@@ -154,7 +180,7 @@ $(window).on("load", function() {
   var animating = false;
   var cardsCounter = 0;
   // var numOfCards = 6;
-  var numOfCards = 18;
+  var numOfCards = 5;
   var decisionVal = 80;
   var pullDeltaX = 0;
   var deg = 0;

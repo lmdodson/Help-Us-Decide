@@ -24,7 +24,7 @@ module.exports = function(app) {
         where: {
           category: req.params.genre
         },
-        limit: 5
+        limit: 10
       })
       .then(function(dbMovies) {
         res.json(dbMovies);

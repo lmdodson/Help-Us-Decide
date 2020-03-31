@@ -16,6 +16,15 @@ module.exports = function(app) {
     });
   });
 
+  //localhost:3000/platforms#&togetherjs=LLK201VGOC
+  // render login page
+  app.get("/platforms#&togetherjs=LLK201VGOC", function(req, res) {
+    res.render("login", {
+      title: "Welcome to Whaddya",
+      login: "LOGIN"
+    });
+  });
+
   // render genres selection page
   app.get("/genres", function(req, res) {
     res.render("genres", {
