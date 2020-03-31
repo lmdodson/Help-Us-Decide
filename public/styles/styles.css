@@ -2,8 +2,6 @@ body {
   font-family: 'Baloo 2', cursive;
   background-color: #000000;
   color: #ffffff;
-  /* overflow: hidden; */
-  /* height: 100%; */
 }
 
 .list-group-item {
@@ -102,6 +100,10 @@ img.card {
   margin-top: 75px;
 }
 
+#cards {
+  margin-top: 75px;
+}
+
 .platform-icon {
   display: inline-block;
   margin: 10px;
@@ -125,7 +127,6 @@ footer {
   text-align: center;
   bottom: 0;
   left: 0;
-  /* right: 0; */
 }
 
 .div-login {
@@ -137,9 +138,6 @@ footer {
   font-size: medium;
   text-align: center;
 }
-/* input {
-  background-color: #ffffff;
-} */
 
 
 /* from Tinder-like Card Swipe: https://codepen.io/suez/pen/MaeVBy.css */
@@ -160,11 +158,9 @@ body {
 .demo {
   position: absolute;
   left: 50%;
-  /* top: 50%; */
   width: 30.6rem;
   height: 54rem;
   margin-left: -15.3rem;
-  /* margin-top: -27rem; */
   background: #000000;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
@@ -242,7 +238,6 @@ body {
 
 .demo__card__top {
   height: 20.5rem;
-  /* padding-top: 4rem; */
   padding-top: 15px;
 }
 
@@ -275,9 +270,6 @@ body {
   width: 10rem;
   height: 10rem;
   margin: 0 auto 1.5rem;
-  /* border-radius: 50%;
-  border: 0.5rem solid #ffffff; */
-  /* background-image: url("//s3-us-west-2.amazonaws.com/s.cdpn.io/142996/profile/profile-512_5.jpg"); */
   background-size: cover;
 }
 
@@ -366,7 +358,6 @@ body {
 
 @media screen and (max-width: 992px) {
   .demo {
-    /* margin-left: 0; */
     margin: auto;
     left: 35%;
     margin-top: 100px;
