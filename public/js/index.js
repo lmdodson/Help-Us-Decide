@@ -19,7 +19,7 @@ $(window).on("load", function() {
     if (genreString) {
       // add the genre to the api
       genreString = "/category/" + genreString;
-      console.log("genreString: ", genreString);
+      // console.log("genreString: ", genreString);
     }
     // db call using the genre
     $.get("/api/movies" + genreString, function(data) {
@@ -59,7 +59,7 @@ $(window).on("load", function() {
         // ajax call to utelly
 
         $.ajax(utellyConfig).done(function (res) {
-          console.log(res)
+          // console.log(res)
           var imdb = res.results[0].external_ids.imdb.id
 
           // define the values for the db
@@ -87,13 +87,12 @@ $(window).on("load", function() {
               img: poster_url,
               imdb: res.results[0].external_ids.imdb.id,
               platform: res.results[0].locations[0].display_name,
-              platformChoice: platformChoice
+              // platformChoice: platformChoice
             };
   
             $.post("/api/options/", Options, function () {
               console.log("done")
           });
-
           });
 
           // }
@@ -104,7 +103,8 @@ $(window).on("load", function() {
     // movieInfo(movieOptions);
   }
 
-  // filter
+// request movies by platform
+
 
   // !icon selection logic
 
@@ -114,7 +114,7 @@ $(window).on("load", function() {
     if (state === "default") {
       var selectedVal = $(this).attr("data-selected");
       $(this).attr("src", selectedVal);
-      console.log(selectedVal);
+      // console.log(selectedVal);
 
       $(this).addClass("selected");
       $(this).attr("data-state", "selected");
@@ -122,7 +122,7 @@ $(window).on("load", function() {
 
       // ! verifying
       var state = $(this).attr("data-state");
-      console.log(state);
+      // console.log(state);
 
       // logic tied to the user's current location
       // if the user is at genres
@@ -132,14 +132,14 @@ $(window).on("load", function() {
 
         genre = $(this).attr("name");
         // genreChoice.push(choice)
-        console.log(genreChoice);
+        // console.log(genreChoice);
 
         // pass the user's choice to the getMovies function
         getMovies(genre);
         // if the user is at platforms
       } else if (window.location.href.includes("platforms")) {
         platformChoice = $(this).attr("name");
-        console.log(platformChoice);
+        // console.log(platformChoice);
       }
       // deselect a selected icon
     } else if (state === "selected") {
