@@ -58,9 +58,9 @@ $(window).on("load", function() {
         var Options = {};
         // ajax call to utelly
 
-        $.ajax(utellyConfig).done(function (res) {
-          console.log(res)
-          var imdb = res.results[0].external_ids.imdb.id
+        $.ajax(utellyConfig).done(function(res) {
+          console.log(res);
+          var imdb = res.results[0].external_ids.imdb.id;
 
           // define the values for the db
           var apiKey = "04a53e64029155a93b244799fbc01994";
@@ -89,11 +89,10 @@ $(window).on("load", function() {
               platform: res.results[0].locations[0].display_name,
               platformChoice: platformChoice
             };
-  
-            $.post("/api/options/", Options, function () {
-              console.log("done")
-          });
 
+            $.post("/api/options/", Options, function() {
+              console.log("done");
+            });
           });
 
           var apiKey = "04a53e64029155a93b244799fbc01994";
@@ -104,23 +103,24 @@ $(window).on("load", function() {
             apiKey +
             "&language=en-US&external_source=imdb_id";
           var base_url = "https://image.tmdb.org/t/p/w185";
-          $.ajax(queryUrl).done(function(response) {
-            // console.log("Response: " + response);
 
-            if (!response.movie_results[0]) {
-              var poster = response.tv_results[0].poster_path;
-            } else {
-              var poster = response.movie_results[0].poster_path;
-            }
-            console.log(poster);
-            var poster_url = base_url + poster;
-          });
+          // console.log("Response: " + response);
+          if (platformChoice === Options.platformChoice) {
+            $.ajax(queryUrl).done(function(response) {
+              if (!response.movie_results[0]) {
+                var poster = response.tv_results[0].poster_path;
+              } else {
+                var poster = response.movie_results[0].poster_path;
+              }
+              console.log(poster);
+              var poster_url = base_url + poster;
+            });
 
-          // push the values to the db
-          $.post("/api/options/", Options, function() {
-            console.log("done");
-          });
-          // }
+            // push the values to the db
+            $.post("/api/options/", Options, function() {
+              console.log("done");
+            });
+          }
         });
       }
     }); //close for loop
